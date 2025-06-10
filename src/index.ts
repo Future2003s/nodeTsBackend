@@ -2,13 +2,14 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import routes from "./routes/index.routes";
 import cors from "cors";
 import PayOS from "@payos/node";
+import envConfig, { API_URL } from "./config/envConfig";
 
 const app: Application = express();
 const port: number = 4000;
 
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: ["http://localhost:3000", "https://lalalycheee.vn"],
         credentials: true
     })
 );
@@ -16,15 +17,13 @@ app.use(express.json());
 
 routes(app);
 
-const payOS = new PayOS(
-    "ebf7258a-1c4f-4f67-b86a-c365a6e38afa",
-    "e6947c87-eac3-4247-846d-305204d79666",
-    "fb33de9fe20d30e9e5f9f3795af9b7161c62ffd3fc3393c01db92a1354047b85"
-);
+const payOS = new PayOS(envConfig.YOUR_CLIENT_ID_PAY, envConfig.YOUR_API_KEY_PAY, envConfig.YOUR_CHECKSUM_KEY_PAY);
 
 app.get("/", (req: Request, res: Response) => {
+    console.log(API_URL);
     res.status(200).json({
-        name: "OK"
+        name: "OK",
+        content: envConfig.PORT || "4000"
     });
 });
 

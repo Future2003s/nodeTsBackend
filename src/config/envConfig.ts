@@ -1,26 +1,30 @@
 "use strict";
-import "dotenv/config";
+import { config } from "dotenv";
 import { z } from "zod";
 
+config({
+    path: ".env"
+});
+
 const configEnvProject = z.object({
-    port: z.number(),
+    PORT: z.coerce.number(),
     YOUR_CLIENT_ID_PAY: z.string(),
     YOUR_API_KEY_PAY: z.string(),
-    YOUR_CHECKSUM_KEY_PAY: z.string()
+    YOUR_CHECKSUM_KEY_PAY: z.string(),
+    IS_PRODUCTION: z.enum(["false", "true"]).transform((val) => val === "true"),
+    API_DOMAIN_URL: z.string()
 });
 
-const _configEnvProject = configEnvProject.safeParse({
-    port: process.env.port,
-    YOUR_CLIENT_ID_PAY: process.env.YOUR_CLIENT_ID_PAY,
-    YOUR_API_KEY_PAY: process.env.YOUR_API_KEY_PAY,
-    YOUR_CHECKSUM_KEY_PAY: process.env.YOUR_CHECKSUM_KEY_PAY
-});
+const _configEnvProject = configEnvProject.safeParse(process.env);
 
 if (!_configEnvProject.success) {
-    console.log("Error format enviroment !!!! ASD N NDFYHM, GH F");
+    console.log("Error format enviroment !!!!");
     throw new Error("Khai báo biến môi trường không hợp lệ");
 }
 
 const envConfig = _configEnvProject.data;
+
+export const API_URL =
+    envConfig.IS_PRODUCTION === true ? envConfig.API_DOMAIN_URL : `http://localhost:${envConfig.PORT}`;
 
 export default envConfig;
