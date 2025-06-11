@@ -30,11 +30,21 @@ app.get("/", (req: Request, res: Response) => {
 app.post("/create-payment-link", async (req, res) => {
     const YOUR_DOMAIN = `https://lalalycheee.vn`;
     try {
-        const paymentLinkResponse = await payOS.createPaymentLink({
-            ...req.body,
-            returnUrl: `${YOUR_DOMAIN}/payment-callback`,
-            cancelUrl: `${YOUR_DOMAIN}/payment-callback`
-        });
+        const body = {
+            orderCode: Number(String(Date.now()).slice(-6)),
+            amount: 2000,
+            description: "Thanh toan don hang",
+            items: [
+                {
+                    name: "Mì tôm Hảo Hảo ly",
+                    quantity: 1,
+                    price: 2000
+                }
+            ],
+            returnUrl: `${YOUR_DOMAIN}/success.html`,
+            cancelUrl: `${YOUR_DOMAIN}/cancel.html`
+        };
+        const paymentLinkResponse = await payOS.createPaymentLink(body);
 
         res.status(200).json(paymentLinkResponse);
     } catch (error: any) {
