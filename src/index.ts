@@ -32,6 +32,7 @@ app.post("/create-payment-link", async (req, res) => {
     try {
         const paymentLinkResponse = await payOS.createPaymentLink({
             ...req.body,
+            orderCode: Number(String(Date.now()).slice(-6)),
             returnUrl: `${YOUR_DOMAIN}/payment-callback`,
             cancelUrl: `${YOUR_DOMAIN}/payment-callback`
         });
