@@ -9,7 +9,7 @@ const port: number = 4000;
 
 app.use(
     cors({
-        origin: ["http://localhost:3000", "https://lalalycheee.vn"],
+        origin: "*",
         credentials: true
     })
 );
