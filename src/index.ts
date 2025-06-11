@@ -9,7 +9,7 @@ const port: number = 4000;
 
 app.use(
     cors({
-        origin: "*",
+        origin: ["http://localhost:3000", "https://lalalycheee.vn"],
         credentials: true
     })
 );
@@ -30,21 +30,11 @@ app.get("/", (req: Request, res: Response) => {
 app.post("/create-payment-link", async (req, res) => {
     const YOUR_DOMAIN = `https://lalalycheee.vn`;
     try {
-        const body = {
-            orderCode: Number(String(Date.now()).slice(-6)),
-            amount: 2000,
-            description: "Thanh toan don hang",
-            items: [
-                {
-                    name: "Mì tôm Hảo Hảo ly",
-                    quantity: 1,
-                    price: 2000
-                }
-            ],
-            returnUrl: `${YOUR_DOMAIN}/success.html`,
-            cancelUrl: `${YOUR_DOMAIN}/cancel.html`
-        };
-        const paymentLinkResponse = await payOS.createPaymentLink(body);
+        const paymentLinkResponse = await payOS.createPaymentLink({
+            ...req.body,
+            returnUrl: `${YOUR_DOMAIN}/payment-callback`,
+            cancelUrl: `${YOUR_DOMAIN}/payment-callback`
+        });
 
         res.status(200).json(paymentLinkResponse);
     } catch (error: any) {
