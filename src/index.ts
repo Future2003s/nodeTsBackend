@@ -1,8 +1,8 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import routes from "./routes/index.routes";
 import cors from "cors";
-import PayOS from "@payos/node";
 import envConfig, { API_URL } from "./config/envConfig";
+import instanceDatabase from "./database/init.mongodb";
 
 const app: Application = express();
 const port: number = 4000;
@@ -15,9 +15,9 @@ app.use(
 );
 app.use(express.json());
 
-routes(app);
+instanceDatabase;
 
-const payOS = new PayOS(envConfig.YOUR_CLIENT_ID_PAY, envConfig.YOUR_API_KEY_PAY, envConfig.YOUR_CHECKSUM_KEY_PAY);
+routes(app);
 
 app.get("/", (req: Request, res: Response) => {
     console.log(API_URL);
@@ -27,25 +27,11 @@ app.get("/", (req: Request, res: Response) => {
     });
 });
 
-app.post("/create-payment-link", async (req, res) => {
-    const YOUR_DOMAIN = `https://lalalycheee.vn`;
-    try {
-        const paymentLinkResponse = await payOS.createPaymentLink({
-            ...req.body,
-            orderCode: Number(String(Date.now()).slice(-6)),
-            returnUrl: `${YOUR_DOMAIN}/payment-callback`,
-            cancelUrl: `${YOUR_DOMAIN}/payment-callback`
-        });
-
-        res.status(200).json(paymentLinkResponse);
-    } catch (error: any) {
-        res.status(error.status || 500).json({ error: true, message: error.message || "Lỗi không xác định" });
-    }
-});
-
 app.listen(port, (): void => {
     console.log(`Listen at PORT http://localhost:${port}`);
 });
+
+// handller error
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     const error: ErrorResponse = new Error("Not Found");
