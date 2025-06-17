@@ -3,6 +3,11 @@ import routes from "./routes/index.routes";
 import cors from "cors";
 import envConfig, { API_URL } from "./config/envConfig";
 import instanceDatabase from "./database/init.mongodb";
+import AWS from "aws-sdk"
+
+
+const s3 = 
+
 
 const app: Application = express();
 const port: number = 4000;
@@ -14,10 +19,15 @@ app.use(
     })
 );
 app.use(express.json());
-
-instanceDatabase;
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+);
 
 routes(app);
+
+instanceDatabase;
 
 app.get("/", (req: Request, res: Response) => {
     console.log(API_URL);

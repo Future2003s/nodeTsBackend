@@ -12,8 +12,8 @@ export interface Product {
     review_count: number;
     gallery: string[];
 }
+
 const productSchema = new Schema<Product>({
-    id: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     description: { type: String },
     details: { type: [String] },

@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 class Database {
     private static instance: Database;
     private strConnectDB: string =
-        "mongodb+srv://phamhongsang12x10:1S72ug0sn4hOyiaX@cluster0.e8gdxf0.mongodb.net/?retryWrites=true&w=majority&appName= ShopDev";
+        "mongodb+srv://phamhongsang12x10:1S72ug0sn4hOyiaX@cluster0.e8gdxf0.mongodb.net/?retryWrites=true&w=majority&appName= shopdev";
     constructor() {
         this.connect();
     }
