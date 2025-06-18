@@ -12,7 +12,10 @@ const configEnvProject = z.object({
     YOUR_API_KEY_PAY: z.string(),
     YOUR_CHECKSUM_KEY_PAY: z.string(),
     IS_PRODUCTION: z.enum(["false", "true"]).transform((val) => val === "true"),
-    API_DOMAIN_URL: z.string()
+    API_DOMAIN_URL: z.string(),
+    AWS_BUCKET_NAME: z.string(),
+    AWS_BUCKET_ACCESSKEY: z.string(),
+    AWS_SECRET_KEY: z.string()
 });
 
 const _configEnvProject = configEnvProject.safeParse(process.env);
