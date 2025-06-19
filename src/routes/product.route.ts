@@ -1,6 +1,6 @@
 "use strict";
 import { Router } from "express";
-import ProductController from "~/controllers/product/product.controller";
+import ProductController from "~/controllers/product.controller";
 import asyncHandller from "~/helpers/asyncHandller";
 const productRouter: Router = Router();
 

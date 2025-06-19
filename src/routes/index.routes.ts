@@ -1,9 +1,9 @@
 "use strict";
 import { Application } from "express";
 import accessRouter from "./common/access.routes";
-import paymentRouter from "./payment/payment.routes";
-import productRouter from "./product/product.route";
-import uploadRouter from "./upload/upload.route";
+import paymentRouter from "./payment.routes";
+import productRouter from "./product.route";
+import uploadRouter from "./upload.route";
 
 function routes(app: Application) {
     app.use("/v1/api", accessRouter);

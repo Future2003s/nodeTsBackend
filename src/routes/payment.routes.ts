@@ -1,6 +1,6 @@
 "use strict";
 import { Router } from "express";
-import PaymentController from "~/controllers/payment/payment.controller";
+import PaymentController from "~/controllers/payment.controller";
 
 const paymentRouter = Router();
 
