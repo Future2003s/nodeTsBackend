@@ -1,6 +1,6 @@
 "use strict";
 import { Application } from "express";
-import accessRouter from "./common/access.routes";
+import accessRouter from "./access.routes";
 import paymentRouter from "./payment.routes";
 import productRouter from "./product.route";
 import uploadRouter from "./upload.route";
