@@ -5,6 +5,7 @@ import { UserTypeModel } from "~/schema/auth.schema";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
 import JWT from "jsonwebtoken";
+import keyTokenModel from "~/model/keyToken.model";
 
 class AccessService {
     public static async register(userRequest: UserTypeModel) {
@@ -36,6 +37,10 @@ class AccessService {
         const refresh_token = await JWT.sign(payload, privateKey, {
             expiresIn: "7d"
         });
+
+        keyTokenModel.create({
+            user_id:
+        })
 
         return {
             data: newUser,
