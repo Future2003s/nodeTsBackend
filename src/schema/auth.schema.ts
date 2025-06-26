@@ -1,6 +1,11 @@
 import { z } from "zod";
 import { ROLE, STATUS } from "~/constants/enum";
 
+const userModelLoginValidation = z.object({
+    email: z.string().min(4, "Name required 4 character"),
+    password: z.string().min(8, "Password requried 8 character")
+});
+
 const userModelValidate = z.object({
     name: z.string().min(4, "Name required 4 character"),
     email: z.string().email("Email INVALID !!!"),
@@ -13,4 +18,6 @@ const userModelValidate = z.object({
 
 export type UserTypeModel = z.infer<typeof userModelValidate>;
 
-export { userModelValidate };
+export type UserTypeModelLogin = z.infer<typeof userModelLoginValidation>;
+
+export { userModelValidate, userModelLoginValidation };

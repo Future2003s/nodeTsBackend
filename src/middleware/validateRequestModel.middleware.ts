@@ -8,8 +8,6 @@ export function validateRequestModel(schema: ZodSchema<any>) {
             next();
         } catch (error) {
             if (error instanceof ZodError) {
-                console.log(error);
-                console.log(req.body);
                 res.status(400).json({
                     success: false,
                     error: error.errors.map((err) => {
