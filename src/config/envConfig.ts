@@ -15,7 +15,11 @@ const configEnvProject = z.object({
     API_DOMAIN_URL: z.string(),
     AWS_BUCKET_NAME: z.string(),
     AWS_BUCKET_ACCESSKEY: z.string(),
-    AWS_SECRET_KEY: z.string()
+    AWS_SECRET_KEY: z.string(),
+    CLIENT_ID: z.string(),
+    CLIENT_SECRET: z.string(),
+    REDIRECT_URI: z.string(),
+    REFRESH_TOKEN: z.string()
 });
 
 const _configEnvProject = configEnvProject.safeParse(process.env);
