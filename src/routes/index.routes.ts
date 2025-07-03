@@ -6,10 +6,10 @@ import productRouter from "./product.route";
 import uploadRouter from "./upload.route";
 
 function routes(app: Application) {
-    app.use("/v1/api", accessRouter);
-    app.use("/v1/api", paymentRouter);
-    app.use("/v1/api", productRouter);
-    app.use("/v1/api", uploadRouter);
+  app.use("/v1/api/auth", accessRouter);
+  app.use("/v1/api", paymentRouter);
+  app.use("/v1/api", productRouter);
+  app.use("/v1/api", uploadRouter);
 }
 
 export default routes;

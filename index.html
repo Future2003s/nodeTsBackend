@@ -1,194 +1,193 @@
 <!doctype html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mẫu Phong Bì A6 - LALA-LYCHEEE (Bản in)</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-        <style>
-            body {
-                background-color: #e5e7eb; /* Màu nền xám để làm nổi bật phong bì */
-                font-family: "Cormorant Garamond", "Noto Sans JP", serif;
-            }
-            .font-playfair {
-                font-family: "Playfair Display", "Noto Sans JP", serif;
-            }
-            .envelope {
-                /* Thêm nền vân tổ ong và vân giấy */
-                background-color: #fdfaf6; /* Màu trắng ngà ấm */
-                background-image: 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mẫu Phong Bì A6 - LALA-LYCHEEE (Bản in)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #e5e7eb; /* Màu nền xám để làm nổi bật phong bì */
+        font-family: "Cormorant Garamond", "Noto Sans JP", serif;
+      }
+      .font-playfair {
+        font-family: "Playfair Display", "Noto Sans JP", serif;
+      }
+      .envelope {
+        /* Thêm nền vân tổ ong và vân giấy */
+        background-color: #fdfaf6; /* Màu trắng ngà ấm */
+        background-image: 
                 /* Lớp vân tổ ong */
-                    url("data:image/svg+xml,%3Csvg width='40' height='46' viewBox='0 0 40 46' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 11.55V34.64L20 46.19 0 34.64V11.55z' fill='%23c8a57a' fill-opacity='0.07'/%3E%3C/svg%3E"),
-                    /* Lớp vân giấy */
-                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+          url("data:image/svg+xml,%3Csvg width='40' height='46' viewBox='0 0 40 46' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 11.55V34.64L20 46.19 0 34.64V11.55z' fill='%23c8a57a' fill-opacity='0.07'/%3E%3C/svg%3E"),
+          /* Lớp vân giấy */
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
 
-                width: 162mm; /* Kích thước phong bì C6 cho giấy A6 */
-                height: 114mm;
-                margin: 2rem auto;
-                box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-                position: relative;
-                overflow: hidden;
-                box-sizing: border-box;
-            }
-            .stamp-area {
-                border: 2px dashed #d1c7b8;
-            }
-            .pattern {
-                position: absolute;
-                opacity: 0.8; /* Tăng độ đậm của hoa văn một chút */
-                pointer-events: none;
-            }
-            /* Cài đặt cho việc in ấn */
-            @media print {
-                body {
-                    background: none;
-                    -webkit-print-color-adjust: exact; /* Đảm bảo màu sắc được in đúng */
-                }
-                .envelope {
-                    margin: 0;
-                    box-shadow: none;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="envelope">
-            <!-- Đường viền trang trí bên trong -->
-            <div class="absolute inset-4 border border-stone-300 rounded-md"></div>
+        width: 162mm; /* Kích thước phong bì C6 cho giấy A6 */
+        height: 114mm;
+        margin: 2rem auto;
+        box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      .stamp-area {
+        border: 2px dashed #d1c7b8;
+      }
+      .pattern {
+        position: absolute;
+        opacity: 0.8; /* Tăng độ đậm của hoa văn một chút */
+        pointer-events: none;
+      }
+      /* Cài đặt cho việc in ấn */
+      @media print {
+        body {
+          background: none;
+          -webkit-print-color-adjust: exact; /* Đảm bảo màu sắc được in đúng */
+        }
+        .envelope {
+          margin: 0;
+          box-shadow: none;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="envelope">
+      <!-- Đường viền trang trí bên trong -->
+      <div class="absolute inset-4 border border-stone-300 rounded-md"></div>
 
-            <!-- Hoa văn trang trí mới: Ong, Vải và Tổ ong -->
-            <div class="pattern bottom-0 left-0 w-48 h-48">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(20, 180) rotate(-15) scale(0.9)">
-                        <!-- Honeycomb cells -->
-                        <g opacity="0.8">
-                            <path
-                                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
-                                fill="#FFD700"
-                                fill-opacity="0.3"
-                                stroke="#c8a57a"
-                                stroke-width="1.5"
-                            />
-                            <path
-                                d="M 90 0 l 20 11.5 v 23 L 90 46 l -20 -11.5 v -23 z"
-                                fill="#FFD700"
-                                fill-opacity="0.2"
-                                stroke="#c8a57a"
-                                stroke-width="1"
-                            />
-                        </g>
-                        <!-- Bee -->
-                        <g transform="translate(85, -50) scale(1.2) rotate(30)">
-                            <path
-                                d="M29.5,19c0,3.9-6.5,7-14.5,7s-14.5-3.1-14.5-7s6.5-7,14.5-7S29.5,15.1,29.5,19z"
-                                fill="#FFC107"
-                            />
-                            <path d="M0.5,19c0,3.9,6.5,7,14.5,7s14.5-3.1,14.5-7" fill="#4A3F35" />
-                            <path d="M15,12c-4.1,0-7.9,1.2-10.8,3.2" stroke="#4A3F35" stroke-width="1" fill="none" />
-                            <path
-                                d="M22,12.2C22,12.2,21.4,6,15.2,6S8.5,12.2,8.5,12.2"
-                                stroke="#4A3F35"
-                                fill="none"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                            />
-                        </g>
-                        <!-- Lychee Icon (New) -->
-                        <g transform="translate(30, -30) scale(1.1) rotate(-20)">
-                            <path
-                                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
-                                stroke="#6B4F35"
-                                stroke-width="2"
-                                fill="none"
-                                stroke-linecap="round"
-                            />
-                            <circle cx="0" cy="0" r="15" fill="#D9534F" />
-                            <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
-                            <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
-                            <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
-                            <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
-                            <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
-                        </g>
-                    </g>
-                </svg>
+      <!-- Hoa văn trang trí mới: Ong, Vải và Tổ ong -->
+      <div class="pattern bottom-0 left-0 w-48 h-48">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(20, 180) rotate(-15) scale(0.9)">
+            <!-- Honeycomb cells -->
+            <g opacity="0.8">
+              <path
+                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
+                fill="#FFD700"
+                fill-opacity="0.3"
+                stroke="#c8a57a"
+                stroke-width="1.5"
+              />
+              <path
+                d="M 90 0 l 20 11.5 v 23 L 90 46 l -20 -11.5 v -23 z"
+                fill="#FFD700"
+                fill-opacity="0.2"
+                stroke="#c8a57a"
+                stroke-width="1"
+              />
+            </g>
+            <!-- Bee -->
+            <g transform="translate(85, -50) scale(1.2) rotate(30)">
+              <path d="M29.5,19c0,3.9-6.5,7-14.5,7s-14.5-3.1-14.5-7s6.5-7,14.5-7S29.5,15.1,29.5,19z" fill="#FFC107" />
+              <path d="M0.5,19c0,3.9,6.5,7,14.5,7s14.5-3.1,14.5-7" fill="#4A3F35" />
+              <path d="M15,12c-4.1,0-7.9,1.2-10.8,3.2" stroke="#4A3F35" stroke-width="1" fill="none" />
+              <path
+                d="M22,12.2C22,12.2,21.4,6,15.2,6S8.5,12.2,8.5,12.2"
+                stroke="#4A3F35"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </g>
+            <!-- Lychee Icon (New) -->
+            <g transform="translate(30, -30) scale(1.1) rotate(-20)">
+              <path
+                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
+                stroke="#6B4F35"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <circle cx="0" cy="0" r="15" fill="#D9534F" />
+              <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
+              <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
+              <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
+              <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
+              <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="pattern top-0 right-0 w-48 h-48">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(180, 20) rotate(165) scale(0.9)">
+            <!-- Honeycomb cell -->
+            <g opacity="0.8">
+              <path
+                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
+                fill="#FFD700"
+                fill-opacity="0.3"
+                stroke="#c8a57a"
+                stroke-width="1.5"
+              />
+            </g>
+            <!-- Lychee Icon -->
+            <g transform="translate(15, -45) scale(1.1) rotate(15)">
+              <path
+                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
+                stroke="#6B4F35"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <circle cx="0" cy="0" r="15" fill="#D9534F" />
+              <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
+              <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
+              <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
+              <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
+              <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="relative z-10 p-6 flex flex-col h-full">
+        <!-- Phần đầu: Thông tin người gửi và khu vực tem -->
+        <div class="flex justify-between items-start">
+          <div class="sender-info">
+            <div class="mb-3 h-16">
+              <!-- Điều chỉnh kích thước logo cho A6 -->
+              <img
+                src="https://d3enplyig2yenj.cloudfront.net/logo"
+                alt="Logo LALA-LYCHEEE"
+                class="h-16 w-16 object-cover rounded-full"
+                onerror="this.style.display='none'"
+              />
             </div>
-            <div class="pattern top-0 right-0 w-48 h-48">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(180, 20) rotate(165) scale(0.9)">
-                        <!-- Honeycomb cell -->
-                        <g opacity="0.8">
-                            <path
-                                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
-                                fill="#FFD700"
-                                fill-opacity="0.3"
-                                stroke="#c8a57a"
-                                stroke-width="1.5"
-                            />
-                        </g>
-                        <!-- Lychee Icon -->
-                        <g transform="translate(15, -45) scale(1.1) rotate(15)">
-                            <path
-                                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
-                                stroke="#6B4F35"
-                                stroke-width="2"
-                                fill="none"
-                                stroke-linecap="round"
-                            />
-                            <circle cx="0" cy="0" r="15" fill="#D9534F" />
-                            <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
-                            <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
-                            <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
-                            <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
-                            <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
-                        </g>
-                    </g>
-                </svg>
+            <div class="text-black space-y-1 text-sm font-bold">
+              <p class="font-playfair text-xl">LALA-LYCHEEE</p>
+              <p class="pt-1 text-xs">Thôn Tú Y, xã Vĩnh Cường, huyện Thanh Hà, tỉnh Hải Dương</p>
+              <p class="text-xs">電話 (Điện thoại): 0962.215.666</p>
+              <p class="text-xs">メール (Email): lalalycheee1@gmail.com</p>
             </div>
-
-            <div class="relative z-10 p-6 flex flex-col h-full">
-                <!-- Phần đầu: Thông tin người gửi và khu vực tem -->
-                <div class="flex justify-between items-start">
-                    <div class="sender-info">
-                        <div class="mb-3 h-16">
-                            <!-- Điều chỉnh kích thước logo cho A6 -->
-                            <img
-                                src="https://d3enplyig2yenj.cloudfront.net/logo"
-                                alt="Logo LALA-LYCHEEE"
-                                class="h-16 w-16 object-cover rounded-full"
-                                onerror="this.style.display='none'"
-                            />
-                        </div>
-                        <div class="text-black space-y-1 text-sm font-bold">
-                            <p class="font-playfair text-xl">LALA-LYCHEEE</p>
-                            <p class="pt-1 text-xs">Thôn Tú Y, xã Vĩnh Cường, huyện Thanh Hà, tỉnh Hải Dương</p>
-                            <p class="text-xs">電話 (Điện thoại): 0962.215.666</p>
-                            <p class="text-xs">メール (Email): lalalycheee1@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="stamp-area w-16 h-20 flex items-center justify-center rounded">
-                        <span
-                            class="text-xs text-stone-500 -rotate-90 whitespace-nowrap tracking-widest"
-                            style="font-family: &quot;Noto Sans JP&quot;, sans-serif"
-                            >郵便切手</span
-                        >
-                    </div>
-                </div>
-
-                <!-- Phần giữa: Tên người nhận -->
-                <div class="flex-grow flex items-center justify-center">
-                    <div class="receiver-info text-center w-full">
-                        <p class="font-playfair text-3xl font-bold text-black">Juri Yoshioka Conaty</p>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="stamp-area w-16 h-20 flex items-center justify-center rounded">
+            <span
+              class="text-xs text-stone-500 -rotate-90 whitespace-nowrap tracking-widest"
+              style="font-family: &quot;Noto Sans JP&quot;, sans-serif"
+              >郵便切手</span
+            >
+          </div>
         </div>
-    </body>
+
+        <!-- Phần giữa: Tên người nhận -->
+        <div class="flex-grow flex items-center justify-center">
+          <div class="receiver-info text-center w-full">
+            <p class="font-playfair text-3xl font-bold text-black">Juri Yoshioka Conaty</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./test.js" defer></script>
 </html>
