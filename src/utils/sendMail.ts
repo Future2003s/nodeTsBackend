@@ -1,8 +1,7 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { TypeRequestBodyMail } from "~/services/mail.service";
-import { confirmOrderCustomer, templateAlertOrderNow, templateThankYou } from "./templateMail.html";
-import { browserEmail } from "node_modules/zod/dist/types/v4/core/regexes";
+import { confirmOrder, confirmOrderCustomer, templateAlertOrderNow, templateThankYou } from "./templateMail.html";
 
 export async function sendMail(data: TypeRequestBodyMail) {
   const REFRESH_TOKEN: string = String(process.env.REFRESH_TOKEN);
@@ -32,26 +31,19 @@ export async function sendMail(data: TypeRequestBodyMail) {
   let typeEmail: (args: TypeRequestBodyMail) => string;
 
   console.log("data.emailType", data.emailType);
-  switch (data.emailType) {
-    case "thankyou":
-      typeEmail = templateThankYou;
-      break;
-    case "confirmed":
-      typeEmail = confirmOrderCustomer;
-      break;
-    case "delivering":
-      typeEmail = templateAlertOrderNow;
-      break;
-    default:
-      typeEmail = confirmOrderCustomer;
-  }
 
-  console.log("typeEmail", typeEmail);
+  if (data.emailType === "thankyou") {
+    typeEmail = templateThankYou;
+  } else if (data.emailType === "delivering") {
+    typeEmail = templateAlertOrderNow;
+  } else if (data.emailType === "confirmed") {
+    typeEmail = confirmOrderCustomer;
+  }
 
   return transporter.sendMail({
     from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
     to: "phamsang1210z9@gmail.com",
-    subject: data.emailType,
-    html: typeEmail(data)
+    subject: "okokok",
+    html: confirmOrderCustomer(data)
   });
 }

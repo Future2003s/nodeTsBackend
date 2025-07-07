@@ -283,6 +283,8 @@ const confirmOrderCustomer = (data: TypeRequestBodyMail) => {
     })
     .join("");
 
+  console.log("productRowsHtml", productRowsHtml);
+
   const formattedGrandTotal = new Intl.NumberFormat("vi-VN").format(data.order.totalValue);
 
   return `<!DOCTYPE html>
@@ -507,9 +509,12 @@ const confirmOrderCustomer = (data: TypeRequestBodyMail) => {
         </tr>
     </table>
 </body>
-${console.log(3)}
 </html>
 `;
 };
 
-export { templateAlertOrderNow, templateThankYou, confirmOrderCustomer };
+const confirmOrder = () => {
+  return "ok";
+};
+
+export { templateAlertOrderNow, templateThankYou, confirmOrderCustomer, confirmOrder };
