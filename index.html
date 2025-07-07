@@ -3,191 +3,190 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mẫu Phong Bì A6 - LALA-LYCHEEE (Bản in)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Thông báo giao hàng - Đơn hàng của bạn đang đến!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
       body {
-        background-color: #e5e7eb; /* Màu nền xám để làm nổi bật phong bì */
-        font-family: "Cormorant Garamond", "Noto Sans JP", serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fdf6f6;
+        font-family: "Quicksand", Arial, sans-serif;
       }
-      .font-playfair {
-        font-family: "Playfair Display", "Noto Sans JP", serif;
-      }
-      .envelope {
-        /* Thêm nền vân tổ ong và vân giấy */
-        background-color: #fdfaf6; /* Màu trắng ngà ấm */
-        background-image: 
-                /* Lớp vân tổ ong */
-          url("data:image/svg+xml,%3Csvg width='40' height='46' viewBox='0 0 40 46' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 11.55V34.64L20 46.19 0 34.64V11.55z' fill='%23c8a57a' fill-opacity='0.07'/%3E%3C/svg%3E"),
-          /* Lớp vân giấy */
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-
-        width: 162mm; /* Kích thước phong bì C6 cho giấy A6 */
-        height: 114mm;
-        margin: 2rem auto;
-        box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-        position: relative;
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
         overflow: hidden;
-        box-sizing: border-box;
+        border: 1px solid #dddddd;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
-      .stamp-area {
-        border: 2px dashed #d1c7b8;
+      .content {
+        padding: 30px;
+        color: #333333;
+        line-height: 1.7;
       }
-      .pattern {
-        position: absolute;
-        opacity: 0.8; /* Tăng độ đậm của hoa văn một chút */
-        pointer-events: none;
+      .signature {
+        padding: 20px;
+        background-color: #fff8f8;
+        color: #333333;
+        font-size: 14px;
       }
-      /* Cài đặt cho việc in ấn */
-      @media print {
-        body {
-          background: none;
-          -webkit-print-color-adjust: exact; /* Đảm bảo màu sắc được in đúng */
-        }
-        .envelope {
-          margin: 0;
-          box-shadow: none;
-          width: 100%;
-          height: 100%;
-        }
+      .button {
+        display: inline-block;
+        background-color: #d9534f;
+        color: #ffffff;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        margin-top: 15px;
       }
     </style>
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
   </head>
-  <body>
-    <div class="envelope">
-      <!-- Đường viền trang trí bên trong -->
-      <div class="absolute inset-4 border border-stone-300 rounded-md"></div>
+  <body style="margin: 0; padding: 0; background-color: #fdf6f6; font-family: &quot;Quicksand&quot;, Arial, sans-serif">
+    <!-- TIÊU ĐỀ EMAIL ĐỀ XUẤT: 🚚 Giao hàng ngay hôm nay! Đơn hàng #[Mã đơn hàng] của bạn đang đến. -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #fdf6f6">
+      <tr>
+        <td align="center" style="padding: 20px 10px">
+          <table
+            class="container"
+            width="100%"
+            style="
+              max-width: 600px;
+              background-color: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              border: 1px solid #dddddd;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            "
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+          >
+            <tr>
+              <td style="padding: 30px 0; text-align: center; background-color: #ffffff">
+                <img
+                  src="https://d3enplyig2yenj.cloudfront.net/logo"
+                  alt="Logo LALA-LYCHEEE"
+                  style="max-width: 200px; height: auto"
+                />
+              </td>
+            </tr>
 
-      <!-- Hoa văn trang trí mới: Ong, Vải và Tổ ong -->
-      <div class="pattern bottom-0 left-0 w-48 h-48">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(20, 180) rotate(-15) scale(0.9)">
-            <!-- Honeycomb cells -->
-            <g opacity="0.8">
-              <path
-                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
-                fill="#FFD700"
-                fill-opacity="0.3"
-                stroke="#c8a57a"
-                stroke-width="1.5"
-              />
-              <path
-                d="M 90 0 l 20 11.5 v 23 L 90 46 l -20 -11.5 v -23 z"
-                fill="#FFD700"
-                fill-opacity="0.2"
-                stroke="#c8a57a"
-                stroke-width="1"
-              />
-            </g>
-            <!-- Bee -->
-            <g transform="translate(85, -50) scale(1.2) rotate(30)">
-              <path d="M29.5,19c0,3.9-6.5,7-14.5,7s-14.5-3.1-14.5-7s6.5-7,14.5-7S29.5,15.1,29.5,19z" fill="#FFC107" />
-              <path d="M0.5,19c0,3.9,6.5,7,14.5,7s14.5-3.1,14.5-7" fill="#4A3F35" />
-              <path d="M15,12c-4.1,0-7.9,1.2-10.8,3.2" stroke="#4A3F35" stroke-width="1" fill="none" />
-              <path
-                d="M22,12.2C22,12.2,21.4,6,15.2,6S8.5,12.2,8.5,12.2"
-                stroke="#4A3F35"
-                fill="none"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </g>
-            <!-- Lychee Icon (New) -->
-            <g transform="translate(30, -30) scale(1.1) rotate(-20)">
-              <path
-                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
-                stroke="#6B4F35"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-              />
-              <circle cx="0" cy="0" r="15" fill="#D9534F" />
-              <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
-              <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
-              <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
-              <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
-              <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
-            </g>
-          </g>
-        </svg>
-      </div>
-      <div class="pattern top-0 right-0 w-48 h-48">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(180, 20) rotate(165) scale(0.9)">
-            <!-- Honeycomb cell -->
-            <g opacity="0.8">
-              <path
-                d="M 50 0 l 20 11.5 v 23 L 50 46 l -20 -11.5 v -23 z"
-                fill="#FFD700"
-                fill-opacity="0.3"
-                stroke="#c8a57a"
-                stroke-width="1.5"
-              />
-            </g>
-            <!-- Lychee Icon -->
-            <g transform="translate(15, -45) scale(1.1) rotate(15)">
-              <path
-                d="M 0 -15 C 5 -20, 5 -22, 8 -25"
-                stroke="#6B4F35"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-              />
-              <circle cx="0" cy="0" r="15" fill="#D9534F" />
-              <circle cx="-5" cy="-5" r="2" fill="#C9433F" opacity="0.5" />
-              <circle cx="5" cy="-3" r="2.5" fill="#C9433F" opacity="0.5" />
-              <circle cx="0" cy="6" r="2" fill="#C9433F" opacity="0.5" />
-              <circle cx="6" cy="4" r="1.5" fill="#C9433F" opacity="0.5" />
-              <circle cx="-7" cy="3" r="1.5" fill="#C9433F" opacity="0.5" />
-            </g>
-          </g>
-        </svg>
-      </div>
+            <!-- NỘI DUNG CHÍNH VỚI WATERMARK -->
+            <tr>
+              <td
+                align="center"
+                class="content"
+                background="https://i.imgur.com/a1689b.jpg"
+                style="
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: 250px;
+                  padding: 10px 40px 30px 40px;
+                "
+              >
+                <!--[if gte mso 9]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:400px;">
+                                <v:fill type="tile" src="https://i.imgur.com/a1689b.jpg" color="#ffffff" />
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                <div>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td
+                        style="
+                          background-color: rgba(255, 255, 255, 0.9);
+                          padding: 25px;
+                          border-radius: 8px;
+                          text-align: center;
+                        "
+                      >
+                        <!-- BẮT ĐẦU NỘI DUNG VĂN BẢN -->
+                        <h2 style="color: #d9534f; margin-top: 0">Đơn hàng đang trên đường đến!</h2>
+                        <p style="margin: 0 0 20px 0; color: #333333; font-size: 16px; line-height: 1.7">
+                          Thân gửi <strong>[Tên khách hàng]</strong>,
+                        </p>
+                        <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px">
+                          Tin vui! Đơn hàng <strong>#[Mã đơn hàng]</strong> của bạn đã được giao cho đơn vị vận chuyển
+                          và sẽ được giao đến bạn <strong>trong ngày hôm nay</strong>.
+                        </p>
+                        <p style="margin: 0 0 25px 0; color: #333333; font-size: 16px">
+                          Bạn vui lòng chuẩn bị và để ý điện thoại để nhận hàng từ shipper nhé!
+                        </p>
 
-      <div class="relative z-10 p-6 flex flex-col h-full">
-        <!-- Phần đầu: Thông tin người gửi và khu vực tem -->
-        <div class="flex justify-between items-start">
-          <div class="sender-info">
-            <div class="mb-3 h-16">
-              <!-- Điều chỉnh kích thước logo cho A6 -->
-              <img
-                src="https://d3enplyig2yenj.cloudfront.net/logo"
-                alt="Logo LALA-LYCHEEE"
-                class="h-16 w-16 object-cover rounded-full"
-                onerror="this.style.display='none'"
-              />
-            </div>
-            <div class="text-black space-y-1 text-sm font-bold">
-              <p class="font-playfair text-xl">LALA-LYCHEEE</p>
-              <p class="pt-1 text-xs">Thôn Tú Y, xã Vĩnh Cường, huyện Thanh Hà, tỉnh Hải Dương</p>
-              <p class="text-xs">電話 (Điện thoại): 0962.215.666</p>
-              <p class="text-xs">メール (Email): lalalycheee1@gmail.com</p>
-            </div>
-          </div>
-          <div class="stamp-area w-16 h-20 flex items-center justify-center rounded">
-            <span
-              class="text-xs text-stone-500 -rotate-90 whitespace-nowrap tracking-widest"
-              style="font-family: &quot;Noto Sans JP&quot;, sans-serif"
-              >郵便切手</span
-            >
-          </div>
-        </div>
+                        <a
+                          href="[Link theo dõi đơn hàng]"
+                          class="button"
+                          style="
+                            display: inline-block;
+                            background-color: #d9534f;
+                            color: #ffffff;
+                            padding: 12px 25px;
+                            text-decoration: none;
+                            border-radius: 8px;
+                            font-weight: bold;
+                            margin-top: 10px;
+                          "
+                          >Theo dõi hành trình đơn hàng</a
+                        >
 
-        <!-- Phần giữa: Tên người nhận -->
-        <div class="flex-grow flex items-center justify-center">
-          <div class="receiver-info text-center w-full">
-            <p class="font-playfair text-3xl font-bold text-black">Juri Yoshioka Conaty</p>
-          </div>
-        </div>
-      </div>
-    </div>
+                        <!-- KẾT THÚC NỘI DUNG VĂN BẢN -->
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!--[if gte mso 9]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+              </td>
+            </tr>
+
+            <!-- Chữ ký Công ty -->
+            <tr>
+              <td
+                class="signature"
+                style="
+                  padding: 30px 40px;
+                  background-color: #fff8f8;
+                  color: #333333;
+                  font-size: 14px;
+                  border-top: 1px solid #fceeee;
+                  text-align: center;
+                "
+              >
+                <p style="margin: 0">Cảm ơn bạn đã mua sắm tại LALA-LYCHEEE!</p>
+                <p style="margin: 10px 0 0 0; font-weight: bold; color: #d9534f; font-size: 18px">LALA-LYCHEEE</p>
+                <p style="margin: 0">
+                  <strong></strong>
+                  <a href="[Link website công ty]" style="color: #d9534f; text-decoration: none; font-weight: bold"></a>
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <table width="100%" style="max-width: 600px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="center" style="padding: 20px 0; font-size: 12px; color: #aaaaaa">
+                <p style="margin: 0">🐝 🍓 🐝 🍓 🐝</p>
+                <p style="margin: 10px 0 0 0">Bạn nhận được email này vì đã đặt hàng tại LALA-LYCHEEE.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
   </body>
-
-  <script src="./test.js" defer></script>
 </html>

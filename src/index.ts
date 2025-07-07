@@ -12,8 +12,8 @@ const port: number = envConfig.PORT;
 
 app.use(
   cors({
-    // origin: ["http://localhost:3000", "https://lalalycheee.vn"],
-    // credentials: true
+    origin: ["http://localhost:3000", "https://lalalycheee.vn"],
+    credentials: true
   })
 );
 app.use(compression());
