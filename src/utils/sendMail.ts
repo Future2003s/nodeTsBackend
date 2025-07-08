@@ -2,7 +2,6 @@ import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { TypeRequestBodyMail } from "~/services/mail.service";
 import { confirmOrderCustomer, templateAlertOrderNow, templateThankYou } from "./templateMail.html";
-import { browserEmail } from "node_modules/zod/dist/types/v4/core/regexes";
 
 export async function sendMail(data: TypeRequestBodyMail) {
   const REFRESH_TOKEN: string = String(process.env.REFRESH_TOKEN);
@@ -29,29 +28,40 @@ export async function sendMail(data: TypeRequestBodyMail) {
     }
   });
 
-  let typeEmail: (args: TypeRequestBodyMail) => string;
+  //   let typeEmail: (args: TypeRequestBodyMail) => string;
 
-  console.log("data.emailType", data.emailType);
+  //   console.log("data.emailType", data.emailType);
+  //   switch (data.emailType) {
+  //     case "thankyou":
+  //       typeEmail = templateThankYou;
+  //       break;
+  //     case "authenticated":
+  //       typeEmail = confirmOrderCustomer;
+  //       break;
+  //     default:
+  //       typeEmail = templateAlertOrderNow;
+  //       break;
+  //   }
+
+  //   console.log("typeEmail", typeEmail);
+
+  let contentSubject: string = "";
+
   switch (data.emailType) {
-    case "thankyou":
-      typeEmail = templateThankYou;
-      break;
-    case "confirmed":
-      typeEmail = confirmOrderCustomer;
+    case "authenticated":
+      contentSubject = "CONFIRMED ORDER";
       break;
     case "delivering":
-      typeEmail = templateAlertOrderNow;
+      contentSubject = "DELIVERING";
       break;
     default:
-      typeEmail = confirmOrderCustomer;
+      contentSubject = "THANK YOU";
   }
-
-  console.log("typeEmail", typeEmail);
 
   return transporter.sendMail({
     from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
-    to: "phamsang1210z9@gmail.com",
-    subject: data.emailType,
-    html: typeEmail(data)
+    to: data.customerEmail,
+    subject: contentSubject,
+    html: data.emailHtmlBody
   });
 }

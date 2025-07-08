@@ -493,7 +493,7 @@ const confirmOrderCustomer = (data: TypeRequestBodyMail) => {
                             <p>Cần hỗ trợ? <a href="mailto:[Email Hỗ Trợ]">Liên hệ với chúng tôi</a>.</p>
                             <p style="margin-top: 15px;">
                                 <strong>LALA-LYCHEEE</strong><br>
-                                Thôn Tú Y, xã Hà Đông, thành phố Hải Phòng
+                                Thôn Tú Y, Xã Hà Đông, Thành Phố Hải Phòng
                             </p>
                         </td>
                     </tr>
@@ -507,7 +507,6 @@ const confirmOrderCustomer = (data: TypeRequestBodyMail) => {
         </tr>
     </table>
 </body>
-${console.log(3)}
 </html>
 `;
 };

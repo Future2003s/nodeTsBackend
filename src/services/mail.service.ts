@@ -4,11 +4,13 @@ import ErrorResponse from "~/response/error.response";
 import { sendMail } from "~/utils/sendMail";
 
 export interface TypeRequestBodyMail {
-  emailType: "thankyou" | "confirmed" | "delivering" | "";
+  emailType: "thankyou" | "authenticated" | "delivering" | "";
   customerInfo: {
     name: string;
     email: string;
   };
+  emailHtmlBody: string;
+  customerEmail: string;
   shippingInfo?: {
     recipientName: string;
     address: string;
