@@ -28,35 +28,7 @@ export async function sendMail(data: TypeRequestBodyMail) {
     }
   });
 
-  //   let typeEmail: (args: TypeRequestBodyMail) => string;
-
-  //   console.log("data.emailType", data.emailType);
-  //   switch (data.emailType) {
-  //     case "thankyou":
-  //       typeEmail = templateThankYou;
-  //       break;
-  //     case "authenticated":
-  //       typeEmail = confirmOrderCustomer;
-  //       break;
-  //     default:
-  //       typeEmail = templateAlertOrderNow;
-  //       break;
-  //   }
-
-  //   console.log("typeEmail", typeEmail);
-
   let contentSubject: string = "";
-
-  switch (data.emailType) {
-    case "authenticated":
-      contentSubject = "CONFIRMED ORDER";
-      break;
-    case "delivering":
-      contentSubject = "DELIVERING";
-      break;
-    default:
-      contentSubject = "THANK YOU";
-  }
 
   return transporter.sendMail({
     from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
