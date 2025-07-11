@@ -13,6 +13,7 @@ const port: number = envConfig.PORT;
 app.use(
   cors({
     origin: ["http://localhost:3000", "https://lalalycheee.vn"],
+    methods: ["POST", "PUT", "PATCH", "GET", "DELETE"],
     credentials: true
   })
 );
