@@ -1,7 +1,6 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { TypeRequestBodyMail } from "~/services/mail.service";
-import { confirmOrderCustomer, templateAlertOrderNow, templateThankYou } from "./templateMail.html";
 
 export async function sendMail(data: TypeRequestBodyMail) {
   const REFRESH_TOKEN: string = String(process.env.REFRESH_TOKEN);
@@ -30,10 +29,33 @@ export async function sendMail(data: TypeRequestBodyMail) {
 
   let contentSubject: string = "";
 
-  return transporter.sendMail({
-    from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
-    to: data.customerEmail,
-    subject: contentSubject,
-    html: data.emailHtmlBody
-  });
+  switch (data.emailType) {
+    case "confirmed":
+      contentSubject = "ORDER CONFIRMATION";
+      break;
+    case "payment_received":
+      contentSubject = "ORDER PAYMENT RECEIVED";
+      break;
+    case "shipped":
+      contentSubject = "ORDER HAS BEEN DELIVERED TO THE SHIPPING UNIT";
+      break;
+    case "delivering":
+      contentSubject = "YOUR ORDER IS BEING DELIVERED TODAY";
+      break;
+    default:
+      contentSubject = "THANK YOU FOR CHOOSING OUR PRODUCT";
+      break;
+  }
+
+  return {
+    status: 200,
+    data: contentSubject
+  };
+
+  // return transporter.sendMail({
+  //   from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
+  //   to: data.customerEmail,
+  //   subject: contentSubject,
+  //   html: data.emailHtmlBody
+  // });
 }

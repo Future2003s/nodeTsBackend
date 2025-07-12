@@ -4,7 +4,7 @@ import ErrorResponse from "~/response/error.response";
 import { sendMail } from "~/utils/sendMail";
 
 export interface TypeRequestBodyMail {
-  emailType: "thankyou" | "authenticated" | "delivering" | "";
+  emailType: "thankyou" | "confirmed" | "delivering" | "shipped" | "payment_received";
   customerInfo: {
     name: string;
     email: string;
