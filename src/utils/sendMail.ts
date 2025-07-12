@@ -47,15 +47,10 @@ export async function sendMail(data: TypeRequestBodyMail) {
       break;
   }
 
-  return {
-    status: 200,
-    data: contentSubject
-  };
-
-  // return transporter.sendMail({
-  //   from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
-  //   to: data.customerEmail,
-  //   subject: contentSubject,
-  //   html: data.emailHtmlBody
-  // });
+  return transporter.sendMail({
+    from: '"LALA-LYCHEEE" <no-reply@lalalycheee1.com>',
+    to: data.customerEmail,
+    subject: contentSubject,
+    html: data.emailHtmlBody
+  });
 }
