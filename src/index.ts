@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application } from "express";
 import routes from "./routes/index.routes";
 import cors from "cors";
 import helmet from "helmet";
@@ -17,6 +17,7 @@ app.use(
     credentials: true
   })
 );
+
 app.use(compression());
 app.use(helmet());
 app.use(express.json());

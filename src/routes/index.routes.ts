@@ -11,7 +11,7 @@ function routes(app: Application) {
   app.use("/v1/api", paymentRouter);
   app.use("/v1/api", productRouter);
   app.use("/v1/api", mailRouter);
-  app.use("/v1/api", uploadRouter);
+  app.use("/v1/api/upload", uploadRouter);
 }
 
 export default routes;

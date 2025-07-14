@@ -19,7 +19,8 @@ const configEnvProject = z.object({
   CLIENT_ID: z.string(),
   CLIENT_SECRET: z.string(),
   REDIRECT_URI: z.string(),
-  REFRESH_TOKEN: z.string()
+  REFRESH_TOKEN: z.string(),
+  CLOUDFRONT_URL: z.string()
 });
 
 const _configEnvProject = configEnvProject.safeParse(process.env);
