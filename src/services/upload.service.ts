@@ -86,33 +86,18 @@ class UploadService {
     files: any[];
     folder?: string;
   }): Promise<UploadResult[]> {
-    // ✅ Validate input
     if (!files || !Array.isArray(files) || files.length === 0) {
       throw new Error("Invalid files array provided");
     }
-
     console.log(`Starting upload of ${files.length} files to folder: ${folder}`);
-
     try {
-      // ✅ Upload tuần tự để tránh rate limit
       const results: UploadResult[] = [];
-
       for (const file of files) {
         console.log(`Uploading file: ${file.originalname}`);
         const result = await this.uploadFile({ file, folder });
         results.push(result);
       }
-
       return results;
-
-      // ✅ Hoặc upload song song (nhanh hơn nhưng có thể bị rate limit)
-      // const uploadPromises = files.map((file, index) => {
-      //     console.log(`Preparing upload ${index + 1}/${files.length}: ${file.originalname}`);
-      //     return this.uploadFile({ file, folder });
-      // });
-
-      // const results = await Promise.all(uploadPromises);
-      // return results;
     } catch (error: any) {
       console.error("Error uploading multiple files:", error);
       throw new Error(`Failed to upload multiple files: ${error.message}`);

@@ -24,7 +24,6 @@ class UploadController {
   public static uploadMultipleFiles = async (req: Request, res: Response) => {
     console.log("Request files:", req.files); // Debug log
     console.log("Request body:", req.body); // Debug log
-    // ✅ Kiểm tra chi tiết hơn
     if (!req.files) {
       throw new ErrorResponse(400, "No files field found in request");
     }

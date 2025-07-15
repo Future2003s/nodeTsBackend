@@ -1,8 +1,7 @@
 "use strict";
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import multer from "multer";
 import { uploadMemory } from "~/config/multer.config";
-import ProductController from "~/controllers/product.controller";
 import UploadController from "~/controllers/upload.controller";
 import asyncHandller from "~/helpers/asyncHandller";
 const uploadRouter: Router = Router();
@@ -27,6 +26,7 @@ uploadRouter.post(
   uploadMemory.single("file"),
   asyncHandller(UploadController.uploadImageFromLocalS3)
 );
+
 // upload multifile
 uploadRouter.post("/multiple", upload.array("files", 10), asyncHandller(UploadController.uploadMultipleFiles));
 //singed url to download
